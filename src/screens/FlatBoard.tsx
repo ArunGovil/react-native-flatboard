@@ -9,10 +9,11 @@ import {
 } from 'react-native';
 import React, {useState, useRef} from 'react';
 import {Dimensions} from 'react-native';
+import {OnBoardingData} from '../types';
 
 type FlatBoardProps = {
-  data: any;
-  onFinish: any;
+  data: OnBoardingData[];
+  onFinish: (e: Event) => void;
 };
 
 export default function FlatBoard({data, onFinish}: FlatBoardProps) {
