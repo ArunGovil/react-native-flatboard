@@ -7,6 +7,53 @@ A Flatlist based onboarding screen for React Native
 </p>
 
 ---
+## Installation
+```sh
+yarn add react-native-flatboard
+```
+
+#### Basic usage:
+
+```jsx
+import { View } from 'react-native';
+import FlatBoard from 'react-native-flatboard';
+
+export default function App() {
+  const onComplete = () => {
+    console.log('Done');
+  };
+  
+  const data = [];
+
+  return (
+    <View style={{flex: 1}}>
+      <FlatBoard data={data} onFinish={onComplete} />
+    </View>
+  );
+}
+
+```
+
+#### Data format:
+
+```jsx
+
+const data = [
+  {
+    id: 1,
+    title: 'Screen One',
+    description: 'Description One',
+    icon: require('image-path.jpg'),
+  },
+  {
+    id: 2,
+    title: 'Screen Two',
+    description: 'Description Two',
+    icon: require('image-path.jpg'),
+  },
+];
+
+```
 
 ## Running locally
 
