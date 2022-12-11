@@ -126,12 +126,13 @@ const styles = StyleSheet.create({
   image: {
     height: 240,
     width: 280,
-    marginBottom: 10,
+    marginBottom: 48,
     borderRadius: 16,
   },
   primaryText: {
     fontSize: 16,
-    color: '#000',
+    fontWeight: 'bold',
+    color: '#080c12',
   },
   secondaryText: {
     fontSize: 14,
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
     padding: 5,
     paddingHorizontal: 10,
     borderRadius: 24,
-    backgroundColor: '#253259',
+    backgroundColor: '#93c01f',
     color: '#fff',
   },
 });

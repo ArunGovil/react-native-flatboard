@@ -1,26 +1,20 @@
 export const OnBoarding = [
   {
     id: 1,
-    title: 'Title One',
-    description: 'Description One',
-    icon: require('../assets/welcome.jpg'),
+    title: 'React Native FlatBoard',
+    description: 'A Flatlist based Onboarding Screen',
+    icon: require('../assets/one.png'),
   },
   {
     id: 2,
-    title: 'Title Two',
-    description: 'Description Two',
-    icon: require('../assets/welcome.jpg'),
+    title: 'Smooth Swipe Control',
+    description: 'Comes with Swipe support',
+    icon: require('../assets/two.png'),
   },
   {
     id: 3,
-    title: 'Title Three',
-    description: 'Description Two',
-    icon: require('../assets/welcome.jpg'),
-  },
-  {
-    id: 4,
-    title: 'Title Four',
-    description: 'Description Two',
-    icon: require('../assets/welcome.jpg'),
+    title: 'Prop and Go',
+    description: 'Pass data as props and fly',
+    icon: require('../assets/three.png'),
   },
 ];
