@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 import React, {useState, useRef} from 'react';
-import {Dimensions} from 'react-native';
+import {useWindowDimensions} from 'react-native';
 import {OnBoardingData} from '../types';
 
 type FlatBoardProps = {
@@ -17,24 +17,26 @@ type FlatBoardProps = {
 };
 
 export default function FlatBoard({data, onFinish}: FlatBoardProps) {
-  const windowWidth = Dimensions.get('window').width;
-  const swipeRef = useRef();
+  const {width} = useWindowDimensions();
+  const swipeRef = useRef<FlatList>(null);
   const [step, setStep] = useState(0);
 
   const nextStep = () => {
     setStep(step + 1);
-    swipeRef.current.scrollToIndex({
-      animated: true,
-      index: step + 1,
-    });
+    swipeRef.current &&
+      swipeRef.current.scrollToIndex({
+        animated: true,
+        index: step + 1,
+      });
   };
 
   const previousStep = () => {
     setStep(step - 1);
-    swipeRef.current.scrollToIndex({
-      animated: true,
-      index: step - 1,
-    });
+    swipeRef.current &&
+      swipeRef.current.scrollToIndex({
+        animated: true,
+        index: step - 1,
+      });
   };
 
   type ListItemProps = {
@@ -45,7 +47,7 @@ export default function FlatBoard({data, onFinish}: FlatBoardProps) {
 
   const ListItem = ({icon, title, description}: ListItemProps) => {
     return (
-      <View style={[styles.swipeItem, {width: windowWidth}]}>
+      <View style={[styles.swipeItem, {width: width}]}>
         <Image style={styles.image} source={icon} />
         <Text style={[styles.primaryText]}>{title}</Text>
         <Text style={[styles.secondaryText]}>{description}</Text>
