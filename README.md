@@ -5,6 +5,9 @@
 <p align="center">
 A Flatlist based onboarding screen for React Native
 </p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/demo.webp" width=360 alt="cmdr"/>
+</p>
 
 ---
 ## Installation
