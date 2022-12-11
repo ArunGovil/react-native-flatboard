@@ -1,5 +1,4 @@
 
-React Native Onboarding Screen based on FlatList
 <p align="center">
 <h3 align="center">react-native-flatboard</h3>
 </p>
