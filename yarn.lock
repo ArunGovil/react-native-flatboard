@@ -5710,6 +5710,11 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-flatboard@^1.0.21:
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/react-native-flatboard/-/react-native-flatboard-1.0.21.tgz#df792676810b479c59f62d8dae68c49d3f1f12ee"
+  integrity sha512-djp6+Uiv1FMSbHKeBJYziQ5H7cMk/rIxUq7HarR2RCCrDB1rZj0GDgWwnt3Eh6PTlT7uKtXivRuTov+LId9Vaw==
+
 react-native-gradle-plugin@^0.70.3:
   version "0.70.3"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
