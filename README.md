@@ -23,14 +23,20 @@ import FlatBoard from 'react-native-flatboard';
 
 export default function App() {
   const onComplete = () => {
-    console.log('Done');
+    console.log('Onboarding Completed');
   };
   
   const data = [];
 
   return (
     <View style={{flex: 1}}>
-      <FlatBoard data={data} onFinish={onComplete} />
+      <FlatBoard
+        data={data}
+        onFinish={onComplete}
+        accentColor="#93c01f"
+        buttonTitle="Lets Go"
+        showIndicator
+      />
     </View>
   );
 }
@@ -81,20 +87,27 @@ const data = [
     <td>none</td>
     <td>Function to call on tour end.</td>
   </tr>
-     <tr>
+  <tr>
     <td>accentColor</td>
     <td>string</td>
     <td>false</td>
     <td>#93c01f</td>
     <td>Accent color for primary/finish button.</td>
   </tr>
-     <tr>
+  <tr>
     <td>buttonTitle</td>
     <td>array</td>
     <td>false</td>
     <td>Get Started</td>
     <td>Title for primary/finish button.</td>
   </tr>
+  <tr>
+    <td>showIndicator</td>
+    <td>boolean</td>
+    <td>false</td>
+    <td>false</td>
+    <td>Show or hide step indicator.</td>
+  </tr> 
 </table>
 
 ## Running locally
@@ -114,7 +127,7 @@ Turn on Android emulator or connect external android device.
 yarn android
 ```
 
-Starts installing the app on your android emulator/devcice.<br>
+Starts installing the app on your android emulator/device.<br>
 
 Your app will start running on the device.
 
