@@ -10,12 +10,15 @@ import React, {useState, useRef} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {styles} from '../styles';
 import {OnBoardingData} from '../types';
+import StepIndicator from '../components/StepIndicator';
 
 type FlatBoardProps = {
   data: OnBoardingData[];
   onFinish: (e: Event) => void;
   accentColor?: string;
   buttonTitle?: string;
+  variant?: string;
+  showIndicator?: boolean;
 };
 
 export default function FlatBoard({
@@ -23,6 +26,7 @@ export default function FlatBoard({
   onFinish,
   accentColor,
   buttonTitle,
+  showIndicator,
 }: FlatBoardProps) {
   const {width} = useWindowDimensions();
   const swipeRef = useRef<FlatList>(null);
@@ -98,6 +102,11 @@ export default function FlatBoard({
             <Text style={[styles.nextButton]}>Previous</Text>
           </TouchableOpacity>
         )}
+        <View style={styles.indicator}>
+          {showIndicator && (
+            <StepIndicator current={step} data={data} accent={accentColor} />
+          )}
+        </View>
         {step < data.length - 1 ? (
           <TouchableOpacity onPress={nextStep}>
             <Text style={[styles.nextButton]}>Next</Text>

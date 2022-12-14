@@ -39,15 +39,17 @@ export const styles = StyleSheet.create({
   stepper: {
     position: 'absolute',
     bottom: 100,
-    width: '80%',
+    width: '90%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   nextButton: {
     padding: 5,
-    paddingHorizontal: 10,
+    borderRadius: 24,
     color: '#666',
+    minWidth: 90,
+    textAlign: 'center',
   },
   skipButton: {
     padding: 5,
@@ -57,4 +59,5 @@ export const styles = StyleSheet.create({
     minWidth: 90,
     textAlign: 'center',
   },
+  indicator: {},
 });
