@@ -57,6 +57,45 @@ const data = [
 ];
 
 ```
+## Customizing (props)
+
+<table>
+  <tr>
+    <th>Name<br/></th>
+    <th>Type</th>
+    <th>Required</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>array</td>
+    <td>true</td>
+    <td>Empty Array</td>
+    <td>Array of data for each slide to be rendered.</td>
+  </tr>
+   <tr>
+    <td>onFinish</td>
+    <td>function</td>
+    <td>true</td>
+    <td>none</td>
+    <td>Function to call on tour end.</td>
+  </tr>
+     <tr>
+    <td>accentColor</td>
+    <td>string</td>
+    <td>false</td>
+    <td>#93c01f</td>
+    <td>Accent color for primary/finish button.</td>
+  </tr>
+     <tr>
+    <td>buttonTitle</td>
+    <td>array</td>
+    <td>false</td>
+    <td>Get Started</td>
+    <td>Title for primary/finish button.</td>
+  </tr>
+</table>
 
 ## Running locally
 
