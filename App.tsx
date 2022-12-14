@@ -10,7 +10,12 @@ const onComplete = () => {
 export default function App() {
   return (
     <View style={{flex: 1}}>
-      <FlatBoard data={OnBoarding} onFinish={onComplete} />
+      <FlatBoard
+        data={OnBoarding}
+        onFinish={onComplete}
+        accentColor="#93c01f"
+        buttonTitle="Lets Go"
+      />
     </View>
   );
 }

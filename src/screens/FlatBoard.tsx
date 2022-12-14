@@ -14,9 +14,16 @@ import {OnBoardingData} from '../types';
 type FlatBoardProps = {
   data: OnBoardingData[];
   onFinish: (e: Event) => void;
+  accentColor?: string;
+  buttonTitle?: string;
 };
 
-export default function FlatBoard({data, onFinish}: FlatBoardProps) {
+export default function FlatBoard({
+  data,
+  onFinish,
+  accentColor,
+  buttonTitle,
+}: FlatBoardProps) {
   const {width} = useWindowDimensions();
   const swipeRef = useRef<FlatList>(null);
   const [step, setStep] = useState(0);
@@ -97,7 +104,9 @@ export default function FlatBoard({data, onFinish}: FlatBoardProps) {
           </TouchableOpacity>
         ) : (
           <TouchableOpacity onPress={onFinish}>
-            <Text style={[styles.skipButton]}>Get Started</Text>
+            <Text style={[styles.skipButton, {backgroundColor: accentColor}]}>
+              {buttonTitle ? buttonTitle : 'Get Started'}
+            </Text>
           </TouchableOpacity>
         )}
       </View>
@@ -124,10 +133,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    height: 240,
+    height: 280,
     width: 280,
     marginBottom: 48,
-    borderRadius: 16,
+    borderRadius: 8,
   },
   primaryText: {
     fontSize: 16,
@@ -156,9 +165,10 @@ const styles = StyleSheet.create({
   },
   skipButton: {
     padding: 5,
-    paddingHorizontal: 10,
     borderRadius: 24,
     backgroundColor: '#93c01f',
-    color: '#fff',
+    color: '#ffffff',
+    minWidth: 90,
+    textAlign: 'center',
   },
 });
