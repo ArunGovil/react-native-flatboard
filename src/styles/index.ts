@@ -5,16 +5,15 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
   },
   swipeItem: {
-    height: 380,
     justifyContent: 'center',
     alignItems: 'center',
   },
   listWrapper: {
-    marginTop: '40%',
-    height: '50%',
+    minHeight: '50%',
+    maxHeight: '90%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -60,4 +59,24 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   indicator: {},
+  modernIndicator: {
+    marginBottom: 26,
+  },
+  modernStepper: {
+    width: '90%',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  modernButton: {
+    width: '100%',
+    height: 50,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  modernTitle: {
+    fontWeight: 'bold',
+    fontSize: 16,
+    color: '#ffffff',
+  },
 });

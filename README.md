@@ -11,9 +11,15 @@ A Flatlist based onboarding screen for React Native
 
 ---
 ## Installation
+Using npm
+```sh
+npm i react-native-flatboard
+```
+Using Yarn
 ```sh
 yarn add react-native-flatboard
 ```
+
 
 #### Basic usage:
 
@@ -35,7 +41,7 @@ export default function App() {
         onFinish={onComplete}
         accentColor="#93c01f"
         buttonTitle="Lets Go"
-        showIndicator
+        hideIndicator
       />
     </View>
   );
@@ -88,6 +94,13 @@ const data = [
     <td>Function to call on tour end.</td>
   </tr>
   <tr>
+    <td>variant</td>
+    <td>string</td>
+    <td>false</td>
+    <td>standard</td>
+    <td>Flatboard theme, supports 'standard' & 'modern'.</td>
+  </tr>  
+  <tr>
     <td>accentColor</td>
     <td>string</td>
     <td>false</td>
@@ -102,11 +115,11 @@ const data = [
     <td>Title for primary/finish button.</td>
   </tr>
   <tr>
-    <td>showIndicator</td>
+    <td>hideIndicator</td>
     <td>boolean</td>
     <td>false</td>
     <td>false</td>
-    <td>Show or hide step indicator.</td>
+    <td>Hide step indicator.</td>
   </tr> 
 </table>
 
