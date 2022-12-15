@@ -1,24 +1,18 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-  FlatList,
-} from 'react-native';
+import {View, Text, Image, StatusBar, FlatList} from 'react-native';
 import React, {useState, useRef} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {styles} from '../styles';
 import {OnBoardingData} from '../types';
-import StepIndicator from '../components/StepIndicator';
+import ModernStepper from '../components/modern/ModernStepper';
+import StandardStepper from '../components/standard/StandardStepper';
 
 type FlatBoardProps = {
   data: OnBoardingData[];
   onFinish: (e: Event) => void;
   accentColor?: string;
   buttonTitle?: string;
-  variant?: string;
-  showIndicator?: boolean;
+  variant?: 'standard' | 'modern';
+  hideIndicator?: boolean;
 };
 
 export default function FlatBoard({
@@ -26,7 +20,8 @@ export default function FlatBoard({
   onFinish,
   accentColor,
   buttonTitle,
-  showIndicator,
+  hideIndicator,
+  variant,
 }: FlatBoardProps) {
   const {width} = useWindowDimensions();
   const swipeRef = useRef<FlatList>(null);
@@ -90,35 +85,32 @@ export default function FlatBoard({
             title={item.title}
           />
         )}
-        contentContainerStyle={styles.listWrapper}
+        contentContainerStyle={[
+          styles.listWrapper,
+          variant === 'modern' && {marginTop: '10%'},
+        ]}
       />
-      <View style={styles.stepper}>
-        {step === 0 ? (
-          <TouchableOpacity onPress={onFinish}>
-            <Text style={[styles.nextButton]}>Skip</Text>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity onPress={previousStep}>
-            <Text style={[styles.nextButton]}>Previous</Text>
-          </TouchableOpacity>
-        )}
-        <View style={styles.indicator}>
-          {showIndicator && (
-            <StepIndicator current={step} data={data} accent={accentColor} />
-          )}
-        </View>
-        {step < data.length - 1 ? (
-          <TouchableOpacity onPress={nextStep}>
-            <Text style={[styles.nextButton]}>Next</Text>
-          </TouchableOpacity>
-        ) : (
-          <TouchableOpacity onPress={onFinish}>
-            <Text style={[styles.skipButton, {backgroundColor: accentColor}]}>
-              {buttonTitle ? buttonTitle : 'Get Started'}
-            </Text>
-          </TouchableOpacity>
-        )}
-      </View>
+      {variant === 'modern' ? (
+        <ModernStepper
+          step={step}
+          data={data}
+          onFinish={onFinish}
+          accentColor={accentColor}
+          buttonTitle={buttonTitle}
+          hideIndicator={hideIndicator}
+        />
+      ) : (
+        <StandardStepper
+          step={step}
+          data={data}
+          onFinish={onFinish}
+          accentColor={accentColor}
+          previousStep={previousStep}
+          nextStep={nextStep}
+          buttonTitle={buttonTitle}
+          hideIndicator={hideIndicator}
+        />
+      )}
     </View>
   );
 }

@@ -1,6 +1,6 @@
 import {View, StyleSheet} from 'react-native';
 import React from 'react';
-import {OnBoardingData} from '../types';
+import {OnBoardingData} from '../../types';
 
 type StepIndicatorProps = {
   data: OnBoardingData[];
