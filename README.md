@@ -1,12 +1,12 @@
 
 <p align="center">
-<h3 align="center">react-native-flatboard</h3>
+<h2 align="center"><a href="https://www.npmjs.com/package/react-native-flatboard">react-native-flatboard</a></h2>
 </p>
 <p align="center">
 A Flatlist based onboarding screen for React Native
 </p>
 <p align="center">
-<img src="https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/cover.webp" width=360 alt="cmdr"/>
+<img src="https://raw.githubusercontent.com/ArunGovil/react-native-flatboard/main/src/assets/cover.webp" width=720 alt="flatboard"/>
 </p>
 
 ---
@@ -19,7 +19,10 @@ Using Yarn
 ```sh
 yarn add react-native-flatboard
 ```
+<br>
 
+> **Note**
+> In case of error on first run, try restarting the metro server.
 
 #### Basic usage:
 
