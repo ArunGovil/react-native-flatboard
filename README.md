@@ -45,6 +45,11 @@ export default function App() {
         accentColor="#93c01f"
         buttonTitle="Lets Go"
         hideIndicator
+        headingStyles={{
+        fontSize: 24,
+        color: '#93c01f',
+        textAlign: "center",
+        }}
       />
     </View>
   );
@@ -124,6 +129,20 @@ const data = [
     <td>false</td>
     <td>Hide step indicator.</td>
   </tr> 
+  <tr>
+  <td>headingStyles</td>
+  <td>StyleSheet</td>
+  <td>false</td>
+  <td>default styles</td>
+  <td>Custom text styles for heading</td>
+  </tr>
+  <tr>
+  <td>descriptionStyles</td>
+  <td>StyleSheet</td>
+  <td>false</td>
+  <td>default styles</td>
+  <td>Custom text styles for description</td>
+  </tr>
 </table>
 
 ## Running locally

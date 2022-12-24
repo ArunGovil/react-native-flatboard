@@ -2,7 +2,7 @@ import {View, Text, Image, StatusBar, FlatList} from 'react-native';
 import React, {useState, useRef} from 'react';
 import {useWindowDimensions} from 'react-native';
 import {styles} from '../styles';
-import {OnBoardingData} from '../types';
+import {OnBoardingData, TextStyles} from '../types';
 import ModernStepper from '../components/modern/ModernStepper';
 import StandardStepper from '../components/standard/StandardStepper';
 
@@ -13,6 +13,8 @@ type FlatBoardProps = {
   buttonTitle?: string;
   variant?: 'standard' | 'modern';
   hideIndicator?: boolean;
+  headingStyle?: TextStyles;
+  descriptionStyle?: TextStyles;
 };
 
 export default function FlatBoard({
@@ -22,6 +24,8 @@ export default function FlatBoard({
   buttonTitle,
   hideIndicator,
   variant,
+  headingStyle,
+  descriptionStyle,
 }: FlatBoardProps) {
   const {width} = useWindowDimensions();
   const swipeRef = useRef<FlatList>(null);
@@ -55,8 +59,13 @@ export default function FlatBoard({
     return (
       <View style={[styles.swipeItem, {width: width}]}>
         <Image style={styles.image} source={icon} />
-        <Text style={[styles.primaryText]}>{title}</Text>
-        <Text style={[styles.secondaryText]}>{description}</Text>
+        <Text style={[styles.primaryText, headingStyle && headingStyle]}>
+          {title}
+        </Text>
+        <Text
+          style={[styles.secondaryText, descriptionStyle && descriptionStyle]}>
+          {description}
+        </Text>
       </View>
     );
   };

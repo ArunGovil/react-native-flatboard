@@ -16,6 +16,12 @@ export default function App() {
         accentColor="#93c01f"
         buttonTitle="Lets Go"
         variant="modern"
+        headingStyle={{
+          fontSize: 22,
+          textAlign: 'center',
+          color: '#93c01f',
+          fontFamily: 'monospace',
+        }}
       />
     </View>
   );
