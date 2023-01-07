@@ -20,7 +20,6 @@ export default function App() {
           fontSize: 22,
           textAlign: 'center',
           color: '#93c01f',
-          fontFamily: 'monospace',
         }}
       />
     </View>
