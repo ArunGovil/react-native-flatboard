@@ -53,10 +53,8 @@ export const styles = StyleSheet.create({
   skipButton: {
     padding: 5,
     borderRadius: 24,
-    backgroundColor: '#93c01f',
     color: '#ffffff',
     minWidth: 90,
-    textAlign: 'center',
   },
   skipItem: {
     color: '#ffffff',

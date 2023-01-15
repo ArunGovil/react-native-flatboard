@@ -1,10 +1,10 @@
-import {View, Text, Image, StatusBar, FlatList} from 'react-native';
+import {View, StatusBar, FlatList} from 'react-native';
 import React, {useState, useRef} from 'react';
-import {useWindowDimensions} from 'react-native';
 import {styles} from '../styles';
 import {OnBoardingData, TextStyles} from '../types';
 import ModernStepper from '../components/modern/ModernStepper';
 import StandardStepper from '../components/standard/StandardStepper';
+import ListItem from '../components/common/ListItem';
 
 type FlatBoardProps = {
   data: OnBoardingData[];
@@ -27,7 +27,6 @@ export default function FlatBoard({
   headingStyle,
   descriptionStyle,
 }: FlatBoardProps) {
-  const {width} = useWindowDimensions();
   const swipeRef = useRef<FlatList>(null);
   const [step, setStep] = useState(0);
 
@@ -47,27 +46,6 @@ export default function FlatBoard({
         animated: true,
         index: step - 1,
       });
-  };
-
-  type ListItemProps = {
-    icon: any;
-    title: string;
-    description: string;
-  };
-
-  const ListItem = ({icon, title, description}: ListItemProps) => {
-    return (
-      <View style={[styles.swipeItem, {width: width}]}>
-        <Image style={styles.image} source={icon} />
-        <Text style={[styles.primaryText, headingStyle && headingStyle]}>
-          {title}
-        </Text>
-        <Text
-          style={[styles.secondaryText, descriptionStyle && descriptionStyle]}>
-          {description}
-        </Text>
-      </View>
-    );
   };
 
   return (
@@ -92,6 +70,8 @@ export default function FlatBoard({
             icon={item.icon}
             description={item.description}
             title={item.title}
+            headingStyle={headingStyle}
+            descriptionStyle={descriptionStyle}
           />
         )}
         contentContainerStyle={[

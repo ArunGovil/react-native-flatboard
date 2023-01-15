@@ -46,9 +46,13 @@ export default function StandardStepper({
           <Text style={[styles.nextButton]}>Next</Text>
         </TouchableOpacity>
       ) : (
-        <TouchableOpacity style={styles.skipButton} onPress={onFinish}>
-          <Text
-            style={[styles.skipItem, {backgroundColor: accentColor ? accentColor : '#93c01f'}]}>
+        <TouchableOpacity
+          style={[
+            styles.skipButton,
+            {backgroundColor: accentColor ? accentColor : '#93c01f'},
+          ]}
+          onPress={onFinish}>
+          <Text style={styles.skipItem}>
             {buttonTitle ? buttonTitle : 'Get Started'}
           </Text>
         </TouchableOpacity>
