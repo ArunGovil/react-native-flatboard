@@ -15,7 +15,7 @@ export default function App() {
         onFinish={onComplete}
         accentColor="#93c01f"
         buttonTitle="Lets Go"
-        variant="modern"
+        variant="standard"
         headingStyle={{
           fontSize: 22,
           textAlign: 'center',

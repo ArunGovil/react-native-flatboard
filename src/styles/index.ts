@@ -58,6 +58,10 @@ export const styles = StyleSheet.create({
     minWidth: 90,
     textAlign: 'center',
   },
+  skipItem: {
+    color: '#ffffff',
+    textAlign: 'center',
+  },
   indicator: {},
   modernIndicator: {
     marginBottom: 26,
