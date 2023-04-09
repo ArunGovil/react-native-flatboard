@@ -10,6 +10,7 @@ type FlatBoardProps = {
   data: OnBoardingData[];
   onFinish: (e: Event) => void;
   accentColor?: string;
+  backgroundColor?: string;
   buttonTitle?: string;
   variant?: 'standard' | 'modern';
   hideIndicator?: boolean;
@@ -21,6 +22,7 @@ export default function FlatBoard({
   data,
   onFinish,
   accentColor,
+  backgroundColor,
   buttonTitle,
   hideIndicator,
   variant,
@@ -49,7 +51,11 @@ export default function FlatBoard({
   };
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        {backgroundColor: backgroundColor ? backgroundColor : '#ffffff'},
+      ]}>
       <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
       <FlatList
         horizontal

@@ -1,4 +1,3 @@
-
 <p align="center">
 <h2 align="center"><a href="https://www.npmjs.com/package/react-native-flatboard">react-native-flatboard</a></h2>
 </p>
@@ -10,15 +9,21 @@ A Flatlist based onboarding screen for React Native
 </p>
 
 ---
+
 ## Installation
+
 Using npm
+
 ```sh
 npm i react-native-flatboard
 ```
+
 Using Yarn
+
 ```sh
 yarn add react-native-flatboard
 ```
+
 <br>
 
 > **Note**
@@ -27,14 +32,14 @@ yarn add react-native-flatboard
 #### Basic usage:
 
 ```jsx
-import { View } from 'react-native';
+import {View} from 'react-native';
 import FlatBoard from 'react-native-flatboard';
 
 export default function App() {
   const onComplete = () => {
     console.log('Onboarding Completed');
   };
-  
+
   const data = [];
 
   return (
@@ -43,24 +48,23 @@ export default function App() {
         data={data}
         onFinish={onComplete}
         accentColor="#93c01f"
+        backgroundColor="#ecfccb"
         buttonTitle="Lets Go"
         hideIndicator
         headingStyles={{
-        fontSize: 24,
-        color: '#93c01f',
-        textAlign: "center",
+          fontSize: 24,
+          color: '#93c01f',
+          textAlign: 'center',
         }}
       />
     </View>
   );
 }
-
 ```
 
 #### Data format:
 
 ```jsx
-
 const data = [
   {
     id: 1,
@@ -75,8 +79,8 @@ const data = [
     icon: require('image-path.jpg'),
   },
 ];
-
 ```
+
 ## Customizing (props)
 
 <table>
@@ -114,6 +118,13 @@ const data = [
     <td>false</td>
     <td>#93c01f</td>
     <td>Accent color for primary/finish button.</td>
+  </tr>
+  <tr>
+    <td>backgroundColor</td>
+    <td>string</td>
+    <td>false</td>
+    <td>#ffffff</td>
+    <td>Background color for Flatboard screens.</td>
   </tr>
   <tr>
     <td>buttonTitle</td>
@@ -165,5 +176,3 @@ yarn android
 Starts installing the app on your android emulator/device.<br>
 
 Your app will start running on the device.
-
-

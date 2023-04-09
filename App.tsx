@@ -7,6 +7,12 @@ const onComplete = () => {
   console.log('Done');
 };
 
+const headingStyle = {
+  fontSize: 22,
+  textAlign: 'center',
+  color: '#93c01f',
+};
+
 export default function App() {
   return (
     <View style={{flex: 1}}>
@@ -16,11 +22,7 @@ export default function App() {
         accentColor="#93c01f"
         buttonTitle="Lets Go"
         variant="standard"
-        headingStyle={{
-          fontSize: 22,
-          textAlign: 'center',
-          color: '#93c01f',
-        }}
+        headingStyle={headingStyle}
       />
     </View>
   );

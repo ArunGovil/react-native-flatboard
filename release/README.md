@@ -47,6 +47,7 @@ export default function App() {
         data={data}
         onFinish={handleFinish}
         accentColor="#93c01f"
+        backgroundColor="#ecfccb"
         buttonTitle="Lets Go"
         hideIndicator
         headingStyles={{
@@ -116,6 +117,13 @@ const data = [
     <td>false</td>
     <td>#93c01f</td>
     <td>Accent color for selected theme.</td>
+  </tr>
+  <tr>
+    <td>backgroundColor</td>
+    <td>string</td>
+    <td>false</td>
+    <td>#ffffff</td>
+    <td>Background color for Flatboard screens.</td>
   </tr>
   <tr>
     <td>buttonTitle</td>
